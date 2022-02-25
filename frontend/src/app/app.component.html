@@ -1,0 +1,25 @@
+<nz-layout>
+  <nz-header>
+    <ul nz-menu nzMode="horizontal" nzTheme="light" class="menu">
+      <li nz-menu-item>
+
+        Courses
+      </li>
+      <li nz-menu-item>
+
+        Events
+      </li>
+      <li nz-menu-item nzSelected [routerLink]="['/instructors']" routerLinkActive="list-item-active">
+
+        Instructors
+      </li>
+
+    </ul>
+  </nz-header>
+  <nz-content class="inner-content">
+    <router-outlet></router-outlet>
+  </nz-content>
+
+
+
+</nz-layout>

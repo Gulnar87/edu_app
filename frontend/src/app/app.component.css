@@ -1,0 +1,11 @@
+.menu {
+  display: flex;
+  justify-content: center;
+
+}
+
+.inner-content {
+
+  padding: 50px;
+  min-height: 100%;
+}

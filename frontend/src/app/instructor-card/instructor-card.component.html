@@ -1,0 +1,15 @@
+<nz-card style="margin-top: 16px" [nzActions]="[actionSetting]" (click)="navigateToDetails()">
+  <nz-card-meta nzTitle="{{instructor.name}}" nzDescription=" This is the description" [nzAvatar]="avatarTemplate">
+  </nz-card-meta>
+
+</nz-card>
+
+
+
+<ng-template #avatarTemplate>
+  <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+</ng-template>
+
+<ng-template #actionSetting>
+  <button nz-button nzType="primary">Request a Quote</button>
+</ng-template>
