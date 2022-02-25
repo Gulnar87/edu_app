@@ -11,3 +11,8 @@ img {
 nz-card:hover{
   cursor: pointer;
 }
+
+.request-button{
+border-radius: 6px;
+
+}

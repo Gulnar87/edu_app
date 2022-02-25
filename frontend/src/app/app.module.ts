@@ -10,12 +10,11 @@ import en from '@angular/common/locales/en';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { InstructorCardComponent } from './instructor-card/instructor-card.component';
 import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
 import { InstructorDetailsComponent } from './instructor-details/instructor-details.component';
+import { RequestQuoteComponent } from './request-quote/request-quote.component';
 
 registerLocaleData(en);
 
@@ -24,7 +23,8 @@ registerLocaleData(en);
     AppComponent,
     InstructorsComponent,
     InstructorCardComponent,
-    InstructorDetailsComponent
+    InstructorDetailsComponent,
+    RequestQuoteComponent
   ],
   imports: [
     BrowserModule,
