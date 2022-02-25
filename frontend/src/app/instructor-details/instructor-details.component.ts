@@ -13,7 +13,7 @@ export class InstructorDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.params.subscribe((params) => {
-      console.log(params, "params")
+      console.log(params, "params hh")
     })
 
 
