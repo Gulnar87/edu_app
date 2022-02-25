@@ -1,1 +1,23 @@
-<p>instructor-details works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <nz-card style="margin-top: 16px" [nzActions]="[actionSetting]">
+        <nz-card-meta nzTitle="{{instructor?.name}}" nzDescription=" This is the description"
+          [nzAvatar]="avatarTemplate">
+        </nz-card-meta>
+
+      </nz-card>
+
+
+      <ng-template #avatarTemplate>
+        <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+      </ng-template>
+
+      <ng-template #actionSetting>
+        <button nz-button nzType="primary">Request a Quote</button>
+      </ng-template>
+    </div>
+
+
+  </div>
+</div>

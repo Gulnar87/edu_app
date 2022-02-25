@@ -16,4 +16,13 @@ export class InstructorsResourceService {
       `${this.basePath}/users`
     );
   }
+
+  getAllInstructorById(id: number): Observable<any> {
+    return this.http.get<Array<any>>(
+      `${this.basePath}/users/${id}`
+    );
+  }
+
+
+
 }

@@ -1,0 +1,13 @@
+img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.circle {
+  padding: 0.5px;
+  border: 2px solid #0064ff;
+}
+
+nz-card:hover{
+  cursor: pointer;
+}
