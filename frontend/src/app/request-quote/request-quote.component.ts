@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-request-quote',
@@ -7,44 +8,42 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./request-quote.component.css']
 })
 export class RequestQuoteComponent implements OnInit {
-  public form: FormGroup;
-  @Input() title?: string;
-  @Input() subtitle?: string;
+  requestForm: FormGroup;
 
-  // @Output() handleSubmit: EventEmitter<any> = new EventEmitter<any>();
-  // @Output() handleClose: EventEmitter<any> = new EventEmitter<any>();
-
-  constructor(private fb: FormBuilder) {
-
+  constructor(private fb: FormBuilder, private modal: NzModalRef) {
   }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      requestName: ['', [Validators.required]],
-      coursePeriod: ['', [Validators.required]],
-      numLearners: ['', [Validators.required]],
-      delivery: ['', [Validators.required]],
-      comment: ['', [Validators.required]],
+    this.requestForm = this.fb.group({
+      requestName: [null, [Validators.required]],
+      coursePeriod: [null, [Validators.required]],
+      numLearners: [null, [Validators.required]],
+      delivery: [null, [Validators.required]],
+      deliveryLocation: [null, []],
+      comment: [null, []],
     });
   }
 
 
-  submitForm() {
+  submitForm(): void {
+    if (this.requestForm.valid) {
+      console.log('submit', this.requestForm.value);
+      this.modal.close()
+    } else {
+      Object.values(this.requestForm.controls).forEach(control => {
+        if (control.invalid) {
+          control.markAsDirty();
+          control.updateValueAndValidity({ onlySelf: true });
+        }
+      });
+    }
+  }
 
-  }
-  handleOk(): void {
-    console.log('Button ok clicked!');
-    // this.isVisible = false;
-  }
+
 
   handleCancel(): void {
-    console.log('Button cancel clicked!');
-    // this.isVisible = false;
+    this.modal.close()
   }
-
-
-
-
 
 
 

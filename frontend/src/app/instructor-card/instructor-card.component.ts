@@ -28,13 +28,6 @@ export class InstructorCardComponent implements OnInit {
     const modal = this.modal.create({
       nzTitle: 'Request Quote',
       nzContent: RequestQuoteComponent,
-
-
     });
-
-
   }
-
-
-
 }
